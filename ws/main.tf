@@ -7,7 +7,11 @@ data "aws_ami" "test_amazon_linux" {
         values = ["hvm"]
     }
 
-    architecture = "arm64"
+    filter {
+        name = "architecture"
+        values = ["arm64"]
+    }
+
 }
 
 resource "aws_instance" "vm-web" {
