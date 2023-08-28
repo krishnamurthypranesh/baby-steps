@@ -5,10 +5,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
-    newrelic = {
-        source = "newrelic/newrelic"
-        version = "~> 3.26.1"
-    }
+    # newrelic = {
+    #     source = "newrelic/newrelic"
+    #     version = "~> 3.26.1"
+    # }
   }
 }
 
@@ -18,8 +18,8 @@ provider "aws" {
 }
 
 # Configure the New Relic provider
-provider "newrelic" {
-  account_id = var.new_relic_account_id
-  api_key =  var.new_relic_api_key
-  region = var.new_relic_region
-}
+# provider "newrelic" {
+#   account_id = var.new_relic_account_id
+#   api_key =  var.new_relic_api_key
+#   region = var.new_relic_region
+# }
