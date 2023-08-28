@@ -2,9 +2,10 @@
 data "aws_ami" "test_amazon_linux" {
     most_recent = true
 
-    name = "test_amazon_linux_ami"
-
-    virtualization_type = "hvm"
+    filter {
+        name = "virtualization-type"
+        values = ["hvm"]
+    }
 }
 
 resource "aws_instance" "vm-web" {
