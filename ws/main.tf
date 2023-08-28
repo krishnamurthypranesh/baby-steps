@@ -6,6 +6,8 @@ data "aws_ami" "test_amazon_linux" {
         name = "virtualization-type"
         values = ["hvm"]
     }
+
+    architecture = "arm64"
 }
 
 resource "aws_instance" "vm-web" {
