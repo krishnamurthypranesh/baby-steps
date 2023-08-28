@@ -1,21 +1,6 @@
 # test instance
-data "aws_ami" "test_amazon_linux" {
-    most_recent = true
-
-    filter {
-        name = "virtualization-type"
-        values = ["hvm"]
-    }
-
-    filter {
-        name = "architecture"
-        values = ["arm64"]
-    }
-
-}
-
 resource "aws_instance" "vm-web" {
-  ami           = data.aws_ami.test_amazon_linux.id
+  ami           = "ami-06f621d90fa29f6d0"
   instance_type = "t2.micro"
 
   tags = {
